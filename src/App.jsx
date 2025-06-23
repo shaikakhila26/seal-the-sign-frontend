@@ -3,6 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+
+
+
+import { useEffect } from 'react';
+//import testAPI from './utils/testAPI';
+
 /* function App() {
   const [count, setCount] = useState(0)
 
@@ -36,6 +42,12 @@ export default App
 */
 
 function App() {
+
+
+  /*useEffect(() => {
+  testAPI();
+}, []);  */
+
   return (
     <div className="h-screen bg-slate-100 text-4xl font-bold flex justify-center items-center text-blue-500">
       ✅ Seal the Sign — Tailwind CSS is Working!
@@ -43,4 +55,12 @@ function App() {
   );
 }
 
+
+
+
+
+
 export default App;
+
+
+
