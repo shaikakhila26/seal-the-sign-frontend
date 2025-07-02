@@ -55,12 +55,15 @@ const handleDocumentLoadSuccess = (pdf) => {
     const fetchDocument = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch(`http://localhost:5000/api/docs/${id}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        const data = await res.json();
-        const cleanPath = data.filePath.replace(/\\/g, '/');
-        const fullUrl = `http://localhost:5000${cleanPath.startsWith('/') ? '' : '/'}${cleanPath}`;
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/docs/${id}`, {
+  headers: { Authorization: `Bearer ${token}` },
+});
+const data = await res.json();
+const cleanPath = data.filePath.replace(/\\/g, '/');
+const backendBase = import.meta.env.VITE_API_BASE_URL.replace('/api', '');
+const fullUrl = `${backendBase}${cleanPath.startsWith('/') ? '' : '/'}${cleanPath}`;
+setFileUrl(fullUrl);
+
         setFileUrl(fullUrl);
       } catch (err) {
         console.error('Failed to fetch PDF:', err);
@@ -402,13 +405,13 @@ console.log('📤 Sending postSignature payload:', {
     });
 
     const token = localStorage.getItem('token');
-    const res = await fetch(`http://localhost:5000/api/signatures/apply/${id}`, { 
-      headers: { Authorization: `Bearer ${token}` },
-    
-    });
+    const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/signatures/apply/${id}`, {
+  headers: { Authorization: `Bearer ${token}` },
+});
+const signedData = await res.json();
+const backendBase = import.meta.env.VITE_API_BASE_URL.replace('/api', '');
+setFileUrl(`${backendBase}${signedData.url}`);
 
-    const signedData = await res.json();
-    setFileUrl(`http://localhost:5000${signedData.url}`);
     setSignedFileName(signedData.fileName);
     setShowToolbar(true);
     setSignature(null);
