@@ -98,7 +98,8 @@ const SignFromToken = () => {
       {/* PDF LEFT */}
       <div className="w-3/5 p-4 flex flex-col items-center">
         <Document
-          file={`http://localhost:5000/${docInfo.filePath}`}
+          file={`${import.meta.env.VITE_API_BASE_URL.replace('/api', '')}/${docInfo.filePath.replace(/\\/g, '/')}`}
+
           onLoadSuccess={handlePDFLoaded}
         >
           <Page
@@ -111,16 +112,21 @@ const SignFromToken = () => {
         {/* Drag Signature */}
         {signature.name && (
           <Draggable
+          nodeRef={canvasRef}
             onStop={handleStopDrag}
-            disabled={dragging}
+            disabled={!dragging}
+            bounds="parent"
           >
             <div
+            ref={canvasRef}
               className="absolute z-50 cursor-move"
               style={{
                 fontFamily: signature.font,
                 fontSize: signature.fontSize,
                 color: '#000',
                 background: 'transparent',
+                left: 100,
+      top: 200,
               }}
             >
               {signature.name}

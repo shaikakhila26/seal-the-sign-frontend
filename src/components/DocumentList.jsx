@@ -60,7 +60,9 @@ const sendRequest = async () => {
           <li className="text-gray-500 italic">No documents uploaded yet.</li>
         )}
         {docs.map((doc) => {
-          const fileUrl = `http://localhost:5000/uploads/${doc.fileName}`;
+          const backendBase = import.meta.env.VITE_API_BASE_URL.replace('/api', '');
+const fileUrl = `${backendBase}/uploads/${doc.fileName}`;
+
           const isPreviewing = previewId === doc._id;
 
           return (
