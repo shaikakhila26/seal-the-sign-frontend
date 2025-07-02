@@ -107,6 +107,9 @@ const SignFromToken = () => {
           file={`${import.meta.env.VITE_API_BASE_URL.replace('/api', '')}/${docInfo.filePath.replace(/\\/g, '/')}`}
 
           onLoadSuccess={handlePDFLoaded}
+          
+        onLoadError={(err) => console.error('❌ PDF load error:', err)}
+
         >
           <Page
             pageNumber={1}
@@ -118,7 +121,7 @@ const SignFromToken = () => {
         {/* Drag Signature */}
         {signature.name && (
           <Draggable
-          nodeRef={canvasRef}
+        
             onStop={handleStopDrag}
             disabled={!dragging}
             bounds="parent"
