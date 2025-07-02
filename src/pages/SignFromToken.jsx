@@ -90,9 +90,15 @@ const SignFromToken = () => {
     alert('✅ Document signed successfully!');
     navigate('/');
   };
+  
+
 
   if (!docInfo) return <p className="p-4">Loading document...</p>;
 
+
+  console.log('📄 filePath in docInfo:', docInfo.filePath);
+
+  console.log('📄 Final PDF URL:', `${import.meta.env.VITE_API_BASE_URL.replace('/api', '')}/${docInfo.filePath.replace(/\\/g, '/')}`);
   return (
     <div className="flex min-h-screen">
       {/* PDF LEFT */}
