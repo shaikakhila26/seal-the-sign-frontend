@@ -31,9 +31,11 @@ const SignFromToken = () => {
     const load = async () => {
       try {
         const res = await axios.get(`/signatures/pending/${token}`);
+        console.log('✅ /pending API response:', res.data);
         setDocInfo(res.data);
       } catch (err) {
         alert('Invalid or expired link.');
+        console.error('❌ Error fetching document by token:', err);
         navigate('/');
       }
     };
