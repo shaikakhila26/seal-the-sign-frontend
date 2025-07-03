@@ -39,6 +39,7 @@ const Home = () => {
               src="/logo.jpg"
               alt="Seal the Sign Logo"
               className="w-24 h-24 object-contain"
+              style="border-radius: 50%; width: 150px; height: 150px;"
             />
           </div>
         </div>
