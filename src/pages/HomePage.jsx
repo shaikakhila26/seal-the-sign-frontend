@@ -34,8 +34,12 @@ const Home = () => {
           <div className="absolute inset-0 rounded-full bg-purple-600 rotate-45 scale-110 z-10"></div>
           <div className="absolute inset-6 rounded-full bg-pink-500 rotate-12 scale-95 z-20"></div>
           {/* Yellow circle with logo */}
-          <div class="relative w-[60px] h-[60px] rounded-full bg-yellow-400 flex items-center justify-center">
-  <img src="/logo.png" class="w-[40px] h-[40px] rounded-full object-cover" alt="Brand Logo" />
+          <div className="absolute inset-12 w-[100px] h-[100px] rounded-full bg-yellow-400 rotate-[30deg] z-30 flex items-center justify-center shadow-md">
+  <img
+    src="/logo.jpg"
+    alt="Seal the Sign Logo"
+    className="w-[60px] h-[60px] rounded-full object-cover"
+  />
 </div>
 
         </div>
