@@ -359,8 +359,8 @@ const handleStopDrag = (e, data) => {
   const clientY = e.clientY ?? e.touches?.[0]?.clientY ?? 0;
 
   // ✨ Subtract canvas left/top to make (0,0) top-left of PDF
-  const relativeX = (e.clientX - canvasRect.left) * scaleX;
-  const relativeY = (e.clientY - canvasRect.top) * scaleY;
+  const relativeX = (clientX - canvasRect.left) * scaleX;
+  const relativeY = (clientY - canvasRect.top) * scaleY;
 
   // 🔁 Convert to PDF-lib coordinates (bottom-left origin)
   const finalX = Math.max(0, Math.min(pdfDims.width - 50, relativeX));
