@@ -31,6 +31,7 @@ export default function SignaturePage() {
   const [placedCoords, setPlacedCoords] = useState(null);
    const [pdfDims, setPdfDims] = useState({ width: 842, height: 595 }); // default fallback
 const [fontSize, setFontSize] = useState(24); // default size
+const [dragging, setDragging] = useState(true); // default is now true ✅
 
 
 
@@ -371,6 +372,8 @@ const handleStopDrag = (e, data) => {
   });
 
   setPlacedCoords({ x: finalX, y: finalY });
+  console.log('📍 Dragging stopped:', { finalX, finalY });
+  alert(`📍 Drag complete at: ${Math.round(finalX)}, ${Math.round(finalY)}`);
 };
 
 
@@ -389,8 +392,8 @@ const handleConfirmSignature = async () => {
 
 console.log('📤 Sending postSignature payload:', {
   documentId: id,
-  x: placedCoords?.x,
-  y: placedCoords?.y,
+  x: placedCoords.x,
+  y: placedCoords.y,
   page: currentPage,
   name: signature?.name,
   font: signature?.font,
