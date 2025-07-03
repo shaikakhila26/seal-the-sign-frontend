@@ -658,7 +658,7 @@ const handleConfirmSignature = async () => {
         )}
       </div>
 
-      <div className="bg-white p-4 rounded shadow max-w-md w-full">
+      <div className="bg-white/60 backdrop-blur-md p-6 rounded-lg shadow-lg max-w-md w-full">
         <h2 className="text-xl font-bold mb-4 text-blue-700">Signature Setup</h2>
         <label className="block mb-2 font-medium">Full Name</label>
         <input
