@@ -38,7 +38,7 @@ const Home = () => {
             <img
               src="/logo.jpg"
               alt="Seal the Sign Logo"
-              className=" rounded-full w-24 h-24 object-cover"
+              className=" w-[60px] h-[60px] rounded-full object-cover"
               
             />
           </div>
