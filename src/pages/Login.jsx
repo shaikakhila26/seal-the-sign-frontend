@@ -41,7 +41,7 @@ const Login = () => {
         backgroundImage: `url('/bg-login.jpg')`, 
       }}
     >
-    <div className="bg-white bg-opacity-90 backdrop-blur-md p-8 rounded shadow-lg max-w-md w-full mx-4">
+    <div className="max-w-md w-full p-6 border rounded shadow bg-white/70 backdrop-blur">
       <h2 className="text-3xl font-bold mb-6 text-center text-blue-800">Login</h2>
       <form onSubmit={handleLogin} className="space-y-4">
         <input

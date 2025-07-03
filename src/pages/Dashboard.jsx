@@ -11,7 +11,7 @@ const Dashboard = () => {
       className="min-h-screen bg-cover bg-center p-4"
       style={{ backgroundImage: `url('/bg-dashboard.jpg')` }}
     >
-    <div className="bg-white bg-opacity-90 backdrop-blur-md p-6 rounded shadow max-w-4xl mx-auto">
+    <div className="bg-white/70 backdrop-blur-sm p-4 rounded shadow">
       <h1 className="text-2xl font-bold mb-4 text-center text-gray-800">📂 Document Dashboard</h1>
       
       {/* Upload form will trigger list refresh */}

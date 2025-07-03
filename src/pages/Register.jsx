@@ -30,7 +30,7 @@ const Register = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/background.jpg')"}}>
-      <div className="bg-white bg-opacity-80 backdrop-blur-md p-8 rounded-2xl shadow-xl max-w-md w-full">
+      <div className="max-w-md w-full p-6 border rounded shadow bg-white/70 backdrop-blur">
       <h2 className="text-2xl font-bold mb-6 text-center text-blue-800">Create Account</h2>
       <form onSubmit={handleRegister}>
         <input
