@@ -387,8 +387,13 @@ const handleStopDrag = (e, data) => {
 
 
 const handleConfirmSignature = async () => {
-  try {
-    if (!placedCoords || !signature) return;
+ if (!placedCoords || placedCoords.x == null || placedCoords.y == null) {
+    alert('❌ Please drag and place your signature before confirming.');
+    return;
+  }
+ 
+    try {
+    
 
 console.log('📤 Sending postSignature payload:', {
   documentId: id,
