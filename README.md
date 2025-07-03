@@ -58,9 +58,9 @@ seal-the-sign-frontend/
 
 ## ⚠ Known Issues & Fixes
 
-- ✅ Mobile signature position mismatch fixed using accurate canvas scaling
-- ✅ Upload path bug resolved by cleaning file path `\` to `/`
-- ✅ Signature save bug on mobile fixed by handling `clientX/clientY` properly
+-  Mobile signature position mismatch fixed using accurate canvas scaling
+-  Upload path bug resolved by cleaning file path `\` to `/`
+-  Signature save bug on mobile fixed by handling `clientX/clientY` properly
 
 ---
 
