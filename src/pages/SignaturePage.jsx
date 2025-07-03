@@ -601,9 +601,9 @@ const handleConfirmSignature = async () => {
         </div>
 
         {signature && (
-          <Draggable nodeRef={dragRef} bounds="parent"  onStop={handleStopDrag}  >  
+          <Draggable  bounds="parent"  onStop={handleStopDrag}  >  
             <div
-              ref={dragRef}
+             
               className={`absolute bg-transparent px-0 py-0 cursor-move text-2xl ${signature.font.replace(/ /g, '-').toLowerCase()}`}
               style={{  pointerEvents: 'auto' }}
             >
