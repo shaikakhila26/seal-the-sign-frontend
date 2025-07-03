@@ -8,7 +8,13 @@ const Home = () => {
       {/* Navbar */}
       <nav className="flex justify-between items-center px-6 py-4 bg-purple-900/60 backdrop-blur-sm shadow-md">
         <div className="text-2xl font-bold tracking-wider text-yellow-400">
-          🖋️ Seal the Sign
+          <img
+              src="/logo.jpg"
+              alt="Seal the Sign Logo"
+              className=" w-24 h-24 rounded-full object-cover"
+              
+            />
+           Seal the Sign
         </div>
         <div className="flex gap-6 items-center">
           <Link to="/login" className="hover:text-yellow-300 transition">Login</Link>
