@@ -1,5 +1,74 @@
 
+import { Link } from 'react-router-dom';
 
+const Home = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-purple-800 via-purple-700 to-purple-900 text-white relative">
+      {/* Navbar */}
+      <nav className="flex justify-between items-center px-6 py-4 bg-purple-900/60 backdrop-blur-sm shadow-md">
+        <div className="text-2xl font-bold tracking-wider text-yellow-400">
+          🖋️ Seal the Sign
+        </div>
+        <div className="flex gap-6 items-center">
+          <Link to="/login" className="hover:text-yellow-300 transition">Login</Link>
+          <Link to="/register" className="hover:text-yellow-300 transition">Register</Link>
+        </div>
+      </nav>
+
+      {/* Main Section */}
+      <div className="flex flex-col md:flex-row items-center justify-between px-10 py-20">
+        {/* Text block */}
+        <div className="max-w-xl">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-pink-300 drop-shadow">
+            Digitally Sign PDFs With Ease ✍️
+          </h1>
+          <p className="text-lg mb-6 text-purple-100">
+            Seal the Sign lets you upload, sign, and securely share PDFs. Customize your signature with fonts, drag placement, and more.
+          </p>
+          <Link
+            to="/dashboard"
+            className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full shadow-md transition"
+          >
+            Get Started
+          </Link>
+        </div>
+
+        {/* Abstract layered blob (fake illustration) */}
+        <div className="relative mt-10 md:mt-0 w-[280px] h-[280px] md:w-[360px] md:h-[360px]">
+          <div className="absolute inset-0 rounded-full bg-purple-600 rotate-45 scale-110 z-10"></div>
+          <div className="absolute inset-6 rounded-full bg-pink-500 rotate-12 scale-95 z-20"></div>
+          <div className="absolute inset-12 rounded-full bg-yellow-400 rotate-[30deg] scale-75 z-30"></div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -36,7 +105,7 @@ export default Home;
 
 
 
-
+*/
 
 
 
