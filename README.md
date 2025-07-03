@@ -7,14 +7,15 @@ A modern, clean, and responsive document signing interface built using **React**
 ## 📁 Folder Structure
 
 seal-the-sign-frontend/
-├── src/
-│   ├── pages/            # SignaturePage.jsx, Dashboard.jsx, Login.jsx etc
-│   ├── components/       # UploadForm, DocumentList, etc
-│   ├── utils/            # Axios config (api.js)
-│   ├── App.jsx
-│   ├── main.jsx
-├── public/
-├── .env                 # VITE_API_BASE_URL
+
+1. src/
+2.  pages/            # SignaturePage.jsx, Dashboard.jsx, Login.jsx etc
+3.  components/       # UploadForm, DocumentList, etc
+4. utils/            # Axios config (api.js)
+5. App.jsx
+6.  main.jsx
+7.  public/
+8.  .env                 # VITE_API_BASE_URL
 
 ## ✨ Features
 
