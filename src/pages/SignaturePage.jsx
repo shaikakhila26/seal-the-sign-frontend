@@ -340,7 +340,7 @@ const handleStopDrag = async (e, data) => {
   console.log('📐 Final transformed coords for PDF:', coords);
   setPlacedCoords(coords);
 };   */
-
+/*
 const handleStopDrag = (e, data) => {
   const canvas = document.querySelector('.react-pdf__Page canvas');
   const canvasRect = canvas.getBoundingClientRect();
@@ -378,6 +378,37 @@ const handleStopDrag = (e, data) => {
   setPlacedCoords({ x: finalX, y: finalY });
   console.log('📍 Dragging stopped:', { finalX, finalY });
   alert(`📍 Drag complete at: ${Math.round(finalX)}, ${Math.round(finalY)}`);
+};
+*/
+
+const handleStopDrag = (e, data) => {
+  const canvas = document.querySelector('.react-pdf__Page canvas');
+  if (!canvas) return;
+
+  const canvasRect = canvas.getBoundingClientRect();
+  const renderedWidth = canvasRect.width;
+  const renderedHeight = canvasRect.height;
+
+  const scaleX = pdfDims.width / renderedWidth;
+  const scaleY = pdfDims.height / renderedHeight;
+
+  const clientX = e?.clientX ?? e?.changedTouches?.[0]?.clientX;
+  const clientY = e?.clientY ?? e?.changedTouches?.[0]?.clientY;
+
+  if (typeof clientX !== 'number' || typeof clientY !== 'number') {
+    alert("⚠️ Could not get pointer position properly.");
+    return;
+  }
+
+  const relativeX = (clientX - canvasRect.left) * scaleX;
+  const relativeY = (clientY - canvasRect.top) * scaleY;
+
+  const finalX = Math.round(Math.max(0, Math.min(pdfDims.width, relativeX)));
+  const finalY = Math.round(Math.max(0, Math.min(pdfDims.height, pdfDims.height - relativeY - fontSize)));
+
+  console.log('📱 Mobile Drag Final Coords:', { finalX, finalY });
+
+  setPlacedCoords({ x: finalX, y: finalY });
 };
 
 
@@ -605,15 +636,20 @@ const handleConfirmSignature = async () => {
         </div>
 
         {signature && (
-          <Draggable  bounds="parent"  onStop={handleStopDrag}  >  
-            <div
-             
-              className={`absolute bg-transparent px-0 py-0 cursor-move text-2xl ${signature.font.replace(/ /g, '-').toLowerCase()}`}
-              style={{  pointerEvents: 'auto' }}
-            >
-              {signature.name}
-            </div>
-          </Draggable>
+          <Draggable bounds="parent" onStop={handleStopDrag}>
+  <div
+    className={`absolute bg-transparent px-0 py-0 cursor-move text-2xl ${signature.font.replace(/ /g, '-').toLowerCase()}`}
+    style={{
+      pointerEvents: 'auto',
+      top: 0,
+      left: 0,
+      fontSize: signature.fontSize || 24,
+    }}
+  >
+    {signature.name}
+  </div>
+</Draggable>
+
         )}
       </div>
 
