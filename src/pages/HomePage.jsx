@@ -11,7 +11,7 @@ const Home = () => {
           <img
               src="/logo.jpg"
               alt="Seal the Sign Logo"
-              className=" w-24 h-24 rounded-full object-contain"
+              className=" w-20 h-20 rounded-full object-contain"
               
             />
            Seal the Sign
