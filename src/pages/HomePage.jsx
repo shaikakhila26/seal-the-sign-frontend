@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div
-      className="min-h-screen bg-cover bg-center flex items-center justify-center px-4"
+      className="min-h-screen bg-cover bg-center flex items-center justify-end px-4"
       style={{ backgroundImage: "url('/home-bg.jpg')" }}
     >
       <div className="bg-white/80 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full text-center">
