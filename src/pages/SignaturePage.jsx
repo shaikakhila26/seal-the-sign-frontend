@@ -354,6 +354,10 @@ const handleStopDrag = (e, data) => {
   const scaleX = pdfDims.width / renderedWidth;
   const scaleY = pdfDims.height / renderedHeight;
 
+  // 🌐 Support both mouse and touch devices
+  const clientX = e.clientX ?? e.touches?.[0]?.clientX ?? 0;
+  const clientY = e.clientY ?? e.touches?.[0]?.clientY ?? 0;
+
   // ✨ Subtract canvas left/top to make (0,0) top-left of PDF
   const relativeX = (e.clientX - canvasRect.left) * scaleX;
   const relativeY = (e.clientY - canvasRect.top) * scaleY;
