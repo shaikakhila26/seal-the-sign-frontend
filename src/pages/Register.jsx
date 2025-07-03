@@ -29,34 +29,36 @@ const Register = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-20 p-6 border rounded shadow">
-      <h2 className="text-2xl font-bold mb-4">Register</h2>
+    <div className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/background.jpg')"}}>
+      <div className="bg-white bg-opacity-80 backdrop-blur-md p-8 rounded-2xl shadow-xl max-w-md w-full">
+      <h2 className="text-2xl font-bold mb-6 text-center text-blue-800">Create Account</h2>
       <form onSubmit={handleRegister}>
         <input
           type="text"
           placeholder="Name"
-          className="w-full mb-3 p-2 border rounded"
+          className="w-full mb-3 p-2 border rounded bg-white bg-opacity-90"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <input
           type="email"
           placeholder="Email"
-          className="w-full mb-3 p-2 border rounded"
+          className="w-full mb-3 p-2 border rounded bg-white bg-opacity-90"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
           placeholder="Password"
-          className="w-full mb-3 p-2 border rounded"
+          className="w-full mb-3 p-2 border rounded bg-white bg-opacity-90"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">
+        <button className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded shadow">
           Register
         </button>
       </form>
+      </div>
     </div>
   );
 };

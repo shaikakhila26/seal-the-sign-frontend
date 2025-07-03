@@ -28,3 +28,9 @@
 .comfortaa { font-family: 'Comfortaa', cursive; }
 .signika { font-family: 'Signika', sans-serif; }
 
+
+
+body {
+  @apply bg-cover bg-center bg-no-repeat min-h-screen;
+  background-image: url('/background.jpg'); /* put this mountain image in your public folder */
+}

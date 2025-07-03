@@ -35,27 +35,34 @@ const Login = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-20 p-6 border rounded shadow">
-      <h2 className="text-2xl font-bold mb-4">Login</h2>
-      <form onSubmit={handleLogin}>
+    <div
+      className="min-h-screen flex items-center justify-center bg-cover bg-center"
+      style={{
+        backgroundImage: `url('/bg-login.jpg')`, 
+      }}
+    >
+    <div className="bg-white bg-opacity-90 backdrop-blur-md p-8 rounded shadow-lg max-w-md w-full mx-4">
+      <h2 className="text-3xl font-bold mb-6 text-center text-blue-800">Login</h2>
+      <form onSubmit={handleLogin} className="space-y-4">
         <input
           type="email"
           placeholder="Email"
-          className="w-full mb-3 p-2 border rounded"
+          className="w-full p-3 border rounded focus:outline-none"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
           placeholder="Password"
-          className="w-full mb-3 p-2 border rounded"
+          className="w-full p-3 border rounded focus:outline-none"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+        <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
           Login
         </button>
       </form>
+    </div>
     </div>
   );
 };
