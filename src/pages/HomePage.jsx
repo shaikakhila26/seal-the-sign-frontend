@@ -34,14 +34,14 @@ const Home = () => {
           <div className="absolute inset-0 rounded-full bg-purple-600 rotate-45 scale-110 z-10"></div>
           <div className="absolute inset-6 rounded-full bg-pink-500 rotate-12 scale-95 z-20"></div>
           {/* Yellow circle with logo */}
-          <div className="absolute inset-12 w-[100px] h-[100px] rounded-full bg-yellow-400 rotate-[30deg] z-30 flex items-center justify-center shadow-md">
-  <img
-    src="/logo.jpg"
-    alt="Seal the Sign Logo"
-    className="w-[60px] h-[60px] rounded-full object-cover"
-  />
-</div>
-
+          <div className="absolute inset-12 rounded-full bg-yellow-400 rotate-[30deg] scale-75 z-30 flex items-center justify-center p-4 shadow-md">
+            <img
+              src="/logo.jpg"
+              alt="Seal the Sign Logo"
+              className=" w-24 h-24 rounded-full object-cover"
+              
+            />
+          </div>
         </div>
       </div>
     </div>
