@@ -33,6 +33,9 @@ export default function SignaturePage() {
 const [fontSize, setFontSize] = useState(24); // default size
 
 
+
+
+
 const handleDocumentLoadSuccess = (pdf) => {
   console.log('✅ PDF Loaded:', pdf);
   setNumPages(pdf.numPages);
@@ -46,6 +49,8 @@ const handleDocumentLoadSuccess = (pdf) => {
     setPdfDims({ width, height });
   });
 };
+
+
 
 
 
@@ -556,13 +561,13 @@ const handleConfirmSignature = async () => {
 
   return (
     <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div className="relative border bg-gray-100 p-2">
+      <div className="relative border bg-gray-100 p-2 w-full">
         <Document
           file={fileUrl}
-          onLoadSuccess={({ numPages }) =>  setNumPages(numPages)}
+          onLoadSuccess={handleDocumentLoadSuccess}
           onLoadError={(e) => console.error('PDF load error:', e)}
         >
-          <Page pageNumber={currentPage} width={pageWidth} />
+          <Page pageNumber={currentPage} width={window.innerWidth < 768 ? window.innerWidth - 40 : 600} />
         </Document>
 
         <div className="mt-4 flex gap-4 items-center justify-center">
@@ -600,7 +605,7 @@ const handleConfirmSignature = async () => {
         )}
       </div>
 
-      <div className="bg-white p-6 rounded shadow max-w-md w-full">
+      <div className="bg-white p-4 rounded shadow max-w-md w-full">
         <h2 className="text-xl font-bold mb-4 text-blue-700">Signature Setup</h2>
         <label className="block mb-2 font-medium">Full Name</label>
         <input
@@ -640,29 +645,29 @@ const handleConfirmSignature = async () => {
            <div>
       
      
-        <button onClick={handleConfirmSignature} className="mt-4 px-4 py-2 bg-blue-600 text-white rounded">Confirm Signature</button>
+        <button onClick={handleConfirmSignature} className=" w-full mt-4 px-4 py-2 bg-blue-600 text-white rounded">Confirm Signature</button>
       
     </div>
 
 
         {showToolbar && (
           <div className="mt-6 flex flex-wrap gap-3">
-            <button onClick={handleDownload} className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+            <button onClick={handleDownload} className=" w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
               Download Signed PDF
             </button>
-            <button onClick={() => handleShare('gmail')} className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
+            <button onClick={() => handleShare('gmail')} className=" w-full bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
               Share via Gmail
             </button>
-            <button onClick={() => handleShare('whatsapp')} className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+            <button onClick={() => handleShare('whatsapp')} className=" w-full bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
               Share via WhatsApp
             </button>
-            <button onClick={() => handleShare('facebook')} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+            <button onClick={() => handleShare('facebook')} className="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
               Facebook
             </button>
-            <button onClick={() => handleShare('twitter')} className="bg-sky-500 text-white px-4 py-2 rounded hover:bg-sky-600">
+            <button onClick={() => handleShare('twitter')} className="w-full bg-sky-500 text-white px-4 py-2 rounded hover:bg-sky-600">
               Twitter / X
             </button>
-            <button onClick={() => handleShare('copy')} className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800">
+            <button onClick={() => handleShare('copy')} className="w-full bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800">
               Copy Link
             </button>
           </div>

@@ -106,7 +106,8 @@ const SignFromToken = () => {
       {/* PDF LEFT */}
       <div className="w-3/5 p-4 flex flex-col items-center">
         <Document
-          file={`${import.meta.env.VITE_API_BASE_URL.replace('/api', '')}/${docInfo.filePath.replace(/\\/g, '/')}`}
+          file={
+             `${import.meta.env.VITE_API_BASE_URL.replace('/api', '')}/${docInfo.filePath.replace(/\\/g, '/')}`}
 
           onLoadSuccess={handlePDFLoaded}
           
