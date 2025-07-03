@@ -603,7 +603,12 @@ const handleConfirmSignature = async () => {
   };
 
   return (
-    <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+    
+  <div
+    className="min-h-screen bg-cover bg-center p-4 grid grid-cols-1 md:grid-cols-2 gap-6"
+    style={{ backgroundImage: "url('/signature-bg.jpg')" }}
+  >
+
       <div className="relative border bg-gray-100 p-2 w-full">
         <Document
           file={fileUrl}
