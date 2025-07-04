@@ -75,5 +75,5 @@ seal-the-sign-frontend/
 
 ## 👩‍💻 Author
 
-**Kidoo26** (Akhila Shaik)
+ Akhila Shaik
 Computer Science | MERN Stack Developer | Passionate about clean though messy UIs
