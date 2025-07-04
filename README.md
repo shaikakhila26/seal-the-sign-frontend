@@ -76,4 +76,5 @@ seal-the-sign-frontend/
 ## 👩‍💻 Author
 
  Akhila Shaik
+ 
 Computer Science | MERN Stack Developer | Passionate about clean though messy UIs
